@@ -98,3 +98,66 @@ console.log("O segundo número é divisível pelo primeiro?",divisivelSegundo ==
 */
 
 //Desafio
+// 1.Exercicio
+/*
+
+let Kelvin = 0
+let Fahrenheit = 77
+let Celsius = 80
+let CparaK = 0
+let CparaF = 0
+
+
+//Graus Fahrenheit(°F) para Kelvin(K)
+Kelvin = (Fahrenheit-32)*(5/9) + 273.15
+console.log("A.",Kelvin)
+
+//Graus Celsius(°C) para Graus Fahrenheit (°F)
+Fahrenheit = (Celsius)*(9/5) + 32
+console.log("B.", Fahrenheit)
+
+Celsius = Number(prompt("Digite segundo número:"));
+
+CparaF = Celsius * (1.8) + (32)
+CparaK = Celsius + 273
+
+console.log("B. ",CparaF,"F ", CparaK,"K") 
+*/
+
+
+// 2.Exercicio
+
+/*
+let quilowatt = 280
+const desconto = 0.85
+const custoEnergia = 0.05
+
+let valor = quilowatt*custoEnergia;
+console.log("O valor da sua energia foi de:", "R$",valor)
+
+let valorComDesconto = (valor*desconto);
+console.log("O valor com desconto da sua energia foi de:","R$",valorComDesconto,"o desconto foi de R$",valor-valorComDesconto);
+*/
+
+// 3.Exercicio
+
+const lb = 20
+let oncas = 10.5
+let Kg  
+const mi = 100
+const ft = 50
+let Metros
+let gal = 103.56
+const xic = 450 
+const Litros = 6
+
+console.log("Valor convertido de lb(libra) para Kg", lb/2.2046 )
+console.log("Valor convertido de Oz(onças) para Kg", oncas*0.028349 )
+console.log("Valor convertido de mi(milhas) para M", mi*1609)
+console.log("Valor convertido de ft(pes) para M", 50*0.3048)
+console.log("Valor convertido de Gal(galões) para L", gal*3.78)
+
+console.log("Valor convertido de Xic(xicara) para L", xic/6)
+
+let xicaras = Number(prompt("Digite o valor para converter de xicaras para litros"))
+console.log("O valor de xícaras foi convertido em:",xicaras/Litros,"Lts")
