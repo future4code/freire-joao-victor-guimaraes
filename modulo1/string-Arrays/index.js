@@ -23,7 +23,7 @@
 
 // const valor = array[i+6]
 // console.log('f. ', valor)
-// console.log(`Retorna a possição do indice 6 que o 9`)
+// console.log(`Retorna a posição do indice 6 que e o 9`)
 
 //2.Analise
 
@@ -65,22 +65,41 @@
 
 //3.Exercício
 
-let listaDeTarefas = []
+// let listaDeTarefas = []
 
 
-let tarefaUm = prompt("Escreva uma tarefa que realiza durante o dia ")
-let tarefaDois = prompt("Escreva outra tarefa que realiza durante o dia ")
-let tarefaTres = prompt("Escreva outra tarefa que realiza durante o dia ")
+// let tarefaUm = prompt("Escreva uma tarefa que realiza durante o dia ")
+// let tarefaDois = prompt("Escreva outra tarefa que realiza durante o dia ")
+// let tarefaTres = prompt("Escreva outra tarefa que realiza durante o dia ")
 
-let indice = prompt("Escolha a tarefa que menos gosta de fazer com 1, 2, 3 ")
+// let indice = prompt("Escolha a tarefa que menos gosta de fazer com 1, 2, 3 ")
 
-listaDeTarefas.push(tarefaUm, tarefaDois, tarefaTres)
+// listaDeTarefas.push(tarefaUm, tarefaDois, tarefaTres)
 
-console.log(listaDeTarefas)
+// console.log(listaDeTarefas)
 
-console.log("A tarefa retirada foi :",listaDeTarefas[indice-1])
+// console.log("A tarefa retirada foi :",listaDeTarefas[indice-1])
 
-indice-=1
+// indice-=1
 
-listaDeTarefas.splice(indice,1)
-console.log(listaDeTarefas)
+// listaDeTarefas.splice(indice,1)
+// console.log(listaDeTarefas)
+
+//Desafio
+
+//1.Exercício
+
+// let fraseRecebida = prompt('Digite uma frase:')
+// let i = fraseRecebida.split(" ");
+// console.log( i );
+
+//2.Exercício
+let fruteira = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+let i = 0
+const valor = fruteira[i+2]
+
+
+
+console.log(valor,'-- Tamanho do indice:', valor.length)
+console.log('Tamanho do Array:', fruteira.length)
+
