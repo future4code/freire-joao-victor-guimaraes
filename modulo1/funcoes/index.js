@@ -1,3 +1,5 @@
+
+
 //Exercícios de interpretação de código
 
 // 1.Interpretação
@@ -79,15 +81,17 @@
 
 //D 
 
-// function mensagem(texto){
+// function mensagem(){
 
 //     let mensagemUsuario = prompt("Escreva uma mensagem:")
+//     let caixaAlta = mensagemUsuario.toUpperCase()
 //     const tamanho = mensagemUsuario.length
-    
-//     return tamanho
-// }
-// console.log(mensagem())
 
+//     console.log(caixaAlta, tamanho)
+
+//     return caixaAlta, tamanho
+// }
+// mensagem()
 
 //3.Exercicio
 
@@ -96,13 +100,13 @@
 
 //  num =+prompt("Digite um numero:")
 //   num1 =+prompt("Digite outro um numero:")
-     
+
 
 //     const soma = num + num1
 //     const diferenca = num - num1
 //     const multi = num * num1
 //     const div = num/num1
-    
+
 //     console.log(`Soma: ${soma}, Diferença: ${diferenca}, Multiplicação: ${multi}, Divisão: ${div}`)
 //     return num, num1
 // }
@@ -137,5 +141,3 @@
 
 
 // }
-
-
