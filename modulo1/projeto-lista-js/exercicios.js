@@ -104,9 +104,7 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
-  let primeiro = array[0]
-  let ultimo = array[array -1]
-  let ultimoEPrimeiro = array 
+  
 
   
   return ultimoEPrimeiro
@@ -115,8 +113,6 @@ function trocaPrimeiroEUltimo(array) {
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
-
-
  let testeString = string1.toLowerCase() === string2.toLowerCase()
 
   return testeString
