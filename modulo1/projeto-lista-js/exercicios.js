@@ -104,10 +104,12 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
+  const ultimo = array[array.length-1]
+  const primeiro = array[0]
+  array[array.length-1] = primeiro;
+  array[0] = ultimo
   
-
-  
-  return ultimoEPrimeiro
+  return array
 }
 
 // EXERCÍCIO 12
@@ -118,19 +120,41 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
   return testeString
 }
 // EXERCÍCIO 13
-function checaRenovacaoRG(string1, string2) {
+function checaRenovacaoRG() {
   // implemente sua lógica aqui
- 
+ let anoAtual = Number(prompt("Qual é ano atual:"))
+ let anoDeNascimento = Number(prompt("Qual ano você nasceu:"))
+ let anoDoRG = Number(prompt("Qual ano foi emitido o RG:"))
+ let idade = anoAtual - anoDeNascimento
+ let emissaoRg = anoAtual - anoDoRG
+
+ let novo = idade <= 20 && emissaoRg >= 5
+ let adulto = idade > 20 && idade <= 50 && emissaoRg >= 10
+ let Acima50Anos = idade > 50 && emissaoRg >= 15
+
+console.log( novo|| adulto || Acima50Anos )
+
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+  let eBissexto = ano % 400 === 0 
+  let eBis = ano % 4 === 0 && ano % 100 !== 0 
 
+ return eBissexto || eBis  
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+
+  let maior = prompt("Você tem mais de 18 anos?")
+  let eMCompleto = prompt("Você possui ensino médio completo?")
+  let disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+
+  let validacao = maior === "sim" && eMCompleto === "sim" && disponibilidade === "sim"
+
+  console.log(validacao)
 
 }
