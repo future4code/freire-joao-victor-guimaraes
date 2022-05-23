@@ -13,11 +13,14 @@
 
 
 console.log('Boas  vindas ao jogo Blackjack')
+console.log("\n")
 
 if (confirm("Gostaria de jogar uma rodada?")) {
 
    const cartaUsuario = comprarCarta()
-   const cartaUsuarioDois = comprarCarta()
+      const cartaUsuarioDois = comprarCarta()
+      
+
    const pontosUsuario = (cartaUsuario.valor + cartaUsuarioDois.valor)
 
    console.log(`Usuário - cartas: ${cartaUsuario.texto} , ${cartaUsuarioDois.texto} Pontuação: ${pontosUsuario} `)
@@ -26,7 +29,8 @@ if (confirm("Gostaria de jogar uma rodada?")) {
    const cartaComputadorDois = comprarCarta()
    const pontosComputador = (cartaComputador.valor + cartaComputadorDois.valor)
 
-   console.log(`Usuário - cartas: ${cartaComputador.texto} , ${cartaComputadorDois.texto} Pontuação: ${pontosComputador} `)
+   console.log(`Computador - cartas: ${cartaComputador.texto} , ${cartaComputadorDois.texto} Pontuação: ${pontosComputador} `)
+
    if (pontosUsuario === pontosComputador) {
       console.log("Empate")
 
