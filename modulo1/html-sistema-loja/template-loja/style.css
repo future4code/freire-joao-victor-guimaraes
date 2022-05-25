@@ -1,0 +1,40 @@
+html,
+body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho {
+    background-color: aquamarine;
+    color: black;
+    padding: 5px;
+    text-align: left;
+}
+
+.menu {
+    text-align: center;
+    text-decoration: none;
+}
+
+.conteudo {
+    flex: 1 0 auto;
+}
+
+.titulos-paginas {
+    margin: 10px;
+
+}
+
+.rodape {
+    flex-shrink: 0;
+    background-color: aquamarine;
+    color: black;
+    padding: 5px;
+    text-align: center;
+}
