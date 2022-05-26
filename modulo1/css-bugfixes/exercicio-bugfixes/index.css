@@ -33,9 +33,7 @@ div>p:first-child {
     display: inline;
 }
 
-div img {
-    background: black;
-}
+ve
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -59,7 +57,8 @@ div img {
 }
 
 .icone {
-    height: 15px;
+    height: 16px;
+    width: 16px;
 }
 
 
@@ -73,7 +72,7 @@ div img {
     background-color: #2274a5;
     color: white;
 
-;
+
 }
 
 #container-de-descricao>p {
@@ -118,10 +117,12 @@ td button {
     border-radius: 5px;
     color: black;
 }
- .textos{
-     text-align: center;
- }
-img{
+
+.textos {
+    text-align: center;
+}
+
+img {
     max-width: 35%;
     max-height: 35%;
 }
