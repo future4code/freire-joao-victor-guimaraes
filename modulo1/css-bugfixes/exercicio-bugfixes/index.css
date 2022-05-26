@@ -33,8 +33,6 @@ div>p:first-child {
     display: inline;
 }
 
-ve
-
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
@@ -92,6 +90,7 @@ ve
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    display: block;
 }
 
 
@@ -139,6 +138,9 @@ img {
     height: 100px;
 }
 
+input{
+    border-bottom: 3px solid black;
+}
 
 #back-button {
     background-color: white;
