@@ -118,7 +118,9 @@ td button {
     border-radius: 5px;
     color: black;
 }
-
+ .Textos{
+     text-align: center;
+ }
 .container-do-search {
     margin-top: 20px;
     height: 100px;
