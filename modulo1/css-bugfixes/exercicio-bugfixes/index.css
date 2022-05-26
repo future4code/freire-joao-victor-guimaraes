@@ -72,8 +72,6 @@ div>p:first-child {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
-
-
 }
 
 #container-de-descricao>p {
@@ -110,6 +108,7 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: 0 auto;
 }
 
 td button {
