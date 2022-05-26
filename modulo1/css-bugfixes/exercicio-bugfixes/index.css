@@ -118,9 +118,14 @@ td button {
     border-radius: 5px;
     color: black;
 }
- .Textos{
+ .textos{
      text-align: center;
  }
+img{
+    max-width: 35%;
+    max-height: 35%;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
