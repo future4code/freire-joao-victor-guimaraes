@@ -106,6 +106,18 @@ div:last-child {
     text-align: center;
 }
 
+div button{
+    width: 30px;
+    height: 30px;
+}
+
+div button:hover{
+    opacity: 40%;
+}
+div button:active{
+    opacity: 100%;
+}
+
 table {
     width: 60%;
     margin: 0 auto;
@@ -132,9 +144,9 @@ td button:active {
     text-align: center;
 }
 
-img {
-    max-width: 35%;
-    max-height: 35%;
+td img {
+    max-width: 40%;
+    max-height: 40%;
 }
 
 .container-do-search {
