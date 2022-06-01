@@ -41,6 +41,7 @@ header>div>input {
 }
 
 .video1 {
+
     display: grid;
     margin: 5px;
     background-color: rgb(231, 231, 231);
@@ -49,6 +50,10 @@ header>div>input {
     height: 280px;
     width: 300px;
    justify-items: center;
+}
+
+.video1:hover{
+    transform: scale(1.1, 1.1);
 }
 
 .video1>a>img {
