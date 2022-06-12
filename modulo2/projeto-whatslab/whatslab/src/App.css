@@ -1,38 +1,84 @@
-.App {
-  text-align: center;
+.container{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #efeaea;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.containerDiv{
+    min-height: 80%;
+    width: 500px;
+    box-sizing: border-box;
+    box-shadow: rgb(14 14 14) 0px 1px 5px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    background-image: url("https://tm.ibxk.com.br/2016/09/13/13162448904561.jpg?ims=1200x675");
+    color:lightgray;
+    border-radius: 9px;
+    
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ContainerMensagens{
+
+width: 50%;
+    height: 50%;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    align-items: flex-start;
+   
+    padding: 20px;
+    
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+
+
+
+
+ form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 15px 5px;
+    
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 1px solid rgb(14, 14, 14);
+    background-color: lightgray;
+    color:lightgray
 }
 
-.App-link {
-  color: #61dafb;
+
+.remetente{
+width: 15%;
+height:100%;
+border-radius: 7px; 
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mensagem{
+width: 65%;
+height: 100%;
+border-radius: 7px; 
+}
+.botaoEnviar{
+border-radius: 7px;
+border-color: lightgrey;
+transition-duration: 0.4s;
+height: 100%;
 }
