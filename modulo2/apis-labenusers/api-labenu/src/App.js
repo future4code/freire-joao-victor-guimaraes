@@ -22,7 +22,7 @@ mudarTela = () =>{
 
 }
   render() {
-   const mudarTela = this.state.TrocarTela? <TelaInicial/>:<TelaDetalhes/>
+   const Tela = this.state.TrocarTela? <TelaInicial/>:<TelaDetalhes/>
     return (
       <div className='App'>
         <button onClick={this.mudarTela}>Trocar Tela</button>
@@ -30,7 +30,7 @@ mudarTela = () =>{
         <br/>
         <br/>
         <hr/>
-        {mudarTela}
+        {Tela}
       
         
 

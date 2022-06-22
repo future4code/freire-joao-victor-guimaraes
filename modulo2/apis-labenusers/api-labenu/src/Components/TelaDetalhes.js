@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import logo from '../logo.svg';
 
 export default class TelaDetalhes extends React.Component {
     state = {
@@ -72,7 +73,7 @@ export default class TelaDetalhes extends React.Component {
         return (
             <div>
                 <h2>Lista de Usuários</h2>
-                {this.state.listaCarregada ? <p>{usuarios}   </p> : "carregando..."}
+                {this.state.listaCarregada ? <p>{usuarios}   </p> : <img src={logo} className="App-logo" alt="logo" />}
             </div>
 
 
