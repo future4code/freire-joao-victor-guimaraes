@@ -7,7 +7,7 @@ const AddMusic = (props) => {
         <div>
             <div>
                 <br></br>
-                <h2>Digite o nome da sua Playlist...</h2>
+                <h2>Adicione a musica na sua Playlist...</h2>
 
                 <label>
                     Nome da Música: &nbsp;

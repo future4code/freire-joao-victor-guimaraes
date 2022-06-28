@@ -1,41 +1,81 @@
 import React from 'react';
-import AddMusic from '../AddMusic/AddMusic';
+// import AddMusic from '../AddMusic/AddMusic';
 import CriarPlaylist from '../CriarPlaylist/CriarPlaylist';
+import CardPlaylist from '../CardPlaylist/CardPlaylist';
+import logo from '../../assets/logo.png';
+import playList from '../../assets/playlist.png';
 
 
 import {
     ContainerInfo,
     Head,
     CompHead,
-    Body
+    Body,
+    MenuLateral,
+    PainelPlalist,
+    Footer,
 } from "./styled";
 
-const TelaInicial = (props) => {
 
 
-    return (
-        <ContainerInfo>
+class TelaInicial extends React.Component {
 
-            <Head>
-                <h1>Labefy</h1>
-                <img src="../../assets/logo.png" alt='' />
-                <CompHead>
-                    <h2>Todas Playlists</h2>
+    state ={
+        currentScreen: "CardPlaylist"
+    }
 
-                    <h2>Criar Playlist</h2>
-                </CompHead>
-            </Head>
+    selectPage = () =>{
+        switch (this.state.currentScreen) {
+            case "CardPlaylist":
+                return <CardPlaylist/>
+            case "CriarPlaylist":
+                return <CriarPlaylist/>
+            default:
+                return <CardPlaylist/>
+    }
+}
 
-            <Body>
-            <CriarPlaylist/>
-            
-            <AddMusic/>
+      render() {
+    
+        
+        return (
+            <ContainerInfo>
 
-            </Body>
+                <Head>
 
-        </ContainerInfo>
+                    <img src={logo} alt='' onClick={this.selectPage("CardPlaylist")}/>
+                    <CompHead>
+                        <img src={playList} alt='' />
+                        <label onClick={()=>this.selectPage("CriarPlaylist")}>Adicionar PlayList</label>
 
-    );
+
+
+                    </CompHead>
+                </Head>
+
+                <Body>
+
+                    <MenuLateral>
+                    
+
+                    </MenuLateral>
+
+                    <PainelPlalist>
+                    {this.selectPage()}
+                    
+
+                    </PainelPlalist>
+
+
+                </Body>
+                <Footer>
+                    <h4>Todos os direitos reservados.</h4>
+                </Footer>
+
+            </ContainerInfo>
+
+        );
+    }
 };
 
 export default TelaInicial;

@@ -1,28 +1,59 @@
 import React from 'react';
+import axios from 'axios';
+import { CriarList } from './styled';
 
-const CriarPlaylist = (props) => {
+class CriarPlaylist extends React.Component {
+    state = {
+        PlaylistValue: ""
+    }
+    componentDidMount() {
+        this.criarPlaylist();
+    }
 
 
-    return (
-        <div>
+    criarPlaylist = () => {
+        const body = {
+            name: this.state.PlaylistValue
+        };
+
+        axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists", body, {
+            headers: {
+                Authorization: "joaoVictor-victoy-Freire"
+            }
+        }
+        ).then((res) => {
+            alert("Success!");
+            console.log(res.data);
+        })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }
+    onChangePlayList = (event) => {
+        this.setState({ PlaylistValue: event.target.value });
+
+    };
+
+
+    render() {
+
+        return (
             <div>
-                <br></br>
+
                 <h2>Digite o nome da sua Playlist...</h2>
 
-                <label>
+                <CriarList>
                     Nome: &nbsp;
-                    <input type='text' placeholder='Nome da Playlist' ></input>
-                </label>
+                    <input type='text' value={this.state.PlaylistValue} onChange={this.onChangePlayList} placeholder='Nome da Playlist' ></input>
+                    <button onClick={this.criarPlaylist}> Criar PlayList </button>
+                </CriarList>
+
+
+
             </div>
 
-
-
-
-
-
-        </div>
-
-    );
+        );
+    };
 };
 
 export default CriarPlaylist;
