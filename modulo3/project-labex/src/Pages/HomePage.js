@@ -17,7 +17,7 @@ export function HomePage() {
     return (
         <div>
             <p>Home</p>
-            <button onClick={goToListTrip}>Lista de Viagens</button>
+            <button onClick={goToListTrip}>Ver Viagens</button>
             <button onClick={goToLogin}>Área Admin</button>
         </div>
 

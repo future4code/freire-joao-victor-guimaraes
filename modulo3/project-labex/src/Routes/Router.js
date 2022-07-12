@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {HomePage} from "../Pages/HomePage";
 import {ListTripPage} from "../Pages/ListTripPage";
-import {FormPage} from "../Pages/ApplicationFormPage";
+import {ApplicationFormPage} from "../Pages/ApplicationFormPage";
 import {LoginPage} from "../Pages/LoginPage";
 import {AdminHomePage} from "../Pages/AdminHomePage";
 import {TripDetailsPage} from "../Pages/TripDetailsPage";
@@ -16,7 +16,7 @@ export default function Router() {
             <Routes>
                 <Route index element={<HomePage/>}/>
                 <Route path="ListTrip" element={<ListTripPage/>}/>
-                <Route path="Form" element={<FormPage/>}/>
+                <Route path="ApplicationForm" element={<ApplicationFormPage/>}/>
                 <Route path="Login" element={<LoginPage/>}/>
                 <Route path="AdminHome" element={<AdminHomePage/>}/>
                 <Route path="TripDetails" element={<TripDetailsPage/>}/>
