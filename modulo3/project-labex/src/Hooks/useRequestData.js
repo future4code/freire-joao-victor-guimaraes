@@ -3,14 +3,14 @@ import axios from 'axios';
 import { URL_BASE } from '../Constantes/URL_BASE.js';
 
 export const useRequestData = () => {
-    const [data, SetData] = useState([]);
+    const [data, setData] = useState([]);
 
     const GetData = () => {
 
         axios.get(`${URL_BASE}/trips`)
 
-            .then(response => {
-                SetData(response.data.trips);     
+            .then(res => {
+                setData(res.data.trips);     
             })
             .catch(err => {
                 console.log(err.message);
