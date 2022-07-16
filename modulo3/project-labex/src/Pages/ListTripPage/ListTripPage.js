@@ -1,16 +1,15 @@
-// import React, { useState, useEffect } from "react";
+
 import { useNavigate } from "react-router-dom"
 import { goBack, goToApplicationPage } from "../../Routes/Coordinator";
-// import { URL_BASE } from "../../Constantes/URL_BASE";
-// import axios from 'axios';
 import { CardTrip } from "../../Component/CardTrip/CardTrip";
-import { useRequestData } from "../../Hooks/useRequestData";
+import { useGetData } from "../../Hooks/useGetData";
+import {DivCard,Div} from "./styled.js"
 
 export function ListTripPage() {
 
     const navigate = useNavigate();
 
-    const todasTrips = useRequestData()
+    const todasTrips = useGetData()
 
     const listTrips = todasTrips.map((trip) => {
         return <CardTrip key={trip.id}
@@ -23,14 +22,14 @@ export function ListTripPage() {
     })
 
     return (
-        <div>
+        <Div>
             <p>Area Viagens</p>
 
             <button onClick={() => goBack(navigate)}>Voltar</button>
             <button onClick={() => goToApplicationPage(navigate)}>Inscrever-se</button>
-            <div>{listTrips}</div>
+            <DivCard>{listTrips}</DivCard>
 
-        </div>
+        </Div>
     )
 
 }

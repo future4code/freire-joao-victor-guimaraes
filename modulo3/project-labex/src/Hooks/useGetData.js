@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { URL_BASE } from '../Constantes/URL_BASE.js';
 
-export const useRequestData = () => {
+export const useGetData = () => {
     const [data, setData] = useState([]);
 
     const GetData = () => {
@@ -23,4 +23,6 @@ export const useRequestData = () => {
 
     return data
 }
+
+
 
