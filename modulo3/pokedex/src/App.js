@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+
+
 import './App.css';
+import { useRequestData, useSprites, useName, useAllpokemons } from './Constante/useRequestData';
 
 function App() {
+ const data = useRequestData();
+ const sprites = useSprites();
+//  const name = useName();
+ const pkms = useAllpokemons();
+
+const nteta = data.map((abilities,key)=> <li key={key}>{abilities.ability.name}</li> ) 
+const allpkms = pkms.map((pkms,key) => <p key={key}>{pkms.name}</p> )
+
+
+
+
+// const teste = sp
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+
+     
+  
+    <img src={sprites} alt=''/>
+      
+    {nteta}
+    {allpkms}
     </div>
   );
 }
