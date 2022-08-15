@@ -13,7 +13,7 @@ type CatalogoFilmes = {
   anoLancamento: number;
   genero: string;
 };
-type Pontuacao = { pontuacao: number };
+type Pontuacao = { pontuacao: number|string };
 const filme1: CatalogoFilmes | (CatalogoFilmes & Pontuacao) = {
   name: "Duna",
   anoLancamento: 2021,
