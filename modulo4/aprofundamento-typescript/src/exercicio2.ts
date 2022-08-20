@@ -21,7 +21,7 @@ function obterEstatisticas(numeros: number[]): Estat {
 }
 type Estat = { maior: number; menor: number; media: number };
 console.log("B. numeros:number[], numerosOrdenados:number, soma: number   ");
-
+// type AmostraDeIdades feito com ajuda da correção
 type AmostraDeIdades = {
   numeros: number[]
   obterEstatisticas: (numeros: number[]) => Estat;
