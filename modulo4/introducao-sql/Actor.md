@@ -38,15 +38,21 @@ VALUES( "004", 400000, "1949-04-18", "male");
 
 
 
-E) INSERT INTO Actor (id, name, salary, birth_date, gender)
+E) - INSERT INTO Actor (id, name, salary, birth_date, gender)
 VALUES("005", "Juliana Paes",719333.33,1979-03-26, 
   "female"); - Error Code: 1292.  - Valor de data incorreto: '1950' para a coluna 'birth_date' na linha 1
 
-F)
-insert into Actor (id,name,salary, birth_date,gender)
+F) - insert into Actor (id,name,salary, birth_date,gender)
 values( "006","Tom Holland",5000000,"1996-06-01",
 "male");
 
 insert into Actor (id, name, salary, birth_date,gender)
 values("007","Zendaya Maree",220000,"1996-09-01",
 "female");
+
+### Exercício 3
+
+A) - SELECT * from Actor WHERE gender = "female";
+
+B) - SELECT name, salary from Actor where name = "Tony Ramos";
+
