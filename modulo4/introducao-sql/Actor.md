@@ -103,3 +103,11 @@ paraibano Ariano Suassuna, encenada em 1955.","2000-09-10",7);
 
 
 
+### Exercício 6
+
+A) - SELECT id, titulo, avaliacao FROM filmes WHERE id = "003";
+
+B) - SELECT * FROM filmes WHERE titulo = "Se Eu Fosse Você";
+
+C) - SELECT id, titulo, sinopse FROM filmes WHERE avaliacao > 7;
+
