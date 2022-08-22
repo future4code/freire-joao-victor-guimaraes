@@ -119,4 +119,4 @@ B) - SELECT * from filmes WHERE (titulo LIKE "%Você%" OR sinopse LIKE "%casada%
 
 C) - SELECT * from filmes WHERE data_de_lançamento < "2021-02-12";
 
-D) - SELECT * from filmes WHERE data_de_lançamento < "2020-02-12" AND (titulo LIKE "%Você%" OR sinopse LIKE "%casada%") AND avaliacao >7;
+D) - SELECT * from filmes WHERE data_de_lançamento < "2020-02-12" AND (titulo LIKE "%Você%" OR sinopse LIKE "%casada%") AND avaliacao >7;.
