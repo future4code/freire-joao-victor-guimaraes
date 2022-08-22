@@ -56,3 +56,21 @@ A) - SELECT * from Actor WHERE gender = "female";
 
 B) - SELECT name, salary from Actor where name = "Tony Ramos";
 
+C) - SELECT * FROM Actor WHERE gender = "invalid";
+
+D) - SELECT id, name, salary FROM Actor WHERE salary <500001;
+
+E) - Código de erro: 1054. Coluna desconhecida 'nome' na 'lista de campos' - o select não encontrou o campo "nome" pois ele não existe na tabela Actor.
+
+### Exercício 4
+
+A) - O SELECT realizara uma busca na tabela de A OU J Com Salary acima de R$300.000.
+
+B) - SELECT * FROM Actor 
+WHERE (name BETWEEN "B%" AND "Z%") AND salary> 350000;
+
+C) - SELECT * FROM Actor 
+WHERE (name LIKE "G%" OR name LIKE "g%");
+
+D) - SELECT *FROM Actor WHERE (name LIKE "%a%" OR name LIKE "%A%" OR name LIKE "%g%" OR name LIKE "%G%") and salary BETWEEN 300000 and  900000;
+
