@@ -31,8 +31,20 @@
 ### Exercicio-4
 
 >
-> A) 
-> B) 
+> A) SELECT MAX(salary) from Actor ;
+> B) SELECT MIN(salary) from Actor WHERE gender = "female" ;
+> C) SELECT COUNT(*) FROM Actor WHERE gender = "female";
+> D) SELECT SUM(salary) FROM Actor; 
+>
+
+### Exercicio-5
+
+>
+> A) SELECT COUNT(*), gender FROM Actor GROUP BY gender; >> Acredito que ele ira contar e agrupar de acordo com Genero.
+> B)  SELECT id, name from Actor ORDER BY name DESC;
+> C)  SELECT * FROM Actor ORDER BY salary;
+> D)  SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;
+> E)  SELECT AVG(salary), gender FROM Actor GROUP BY gender;
 >
 
 ### Exercicio-6
