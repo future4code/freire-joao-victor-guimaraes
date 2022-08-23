@@ -15,12 +15,18 @@
 ### Exercicio-2
 
 >
-> A) 
-> B)
-> C)
-> D)
+> A) UPDATE Actor SET name = "FERNANDA MONTENEGRO", birth_date = "1929-10-16"  WHERE id = "003"
+> B) UPDATE Actor SET name = "JULIANA PAES"  WHERE id = "005"; >> UPDATE Actor SET name = "Juliana Paes"  WHERE id = "005";
+> C) UPDATE Actor SET name = "Juliano Praes", salary = 100000, birth_date = "2000-03-26", gender = "male"  WHERE id = "009";
+> D) UPDATE Actor SET salary = 100000 WHERE id = "009"; >> Não deu erro.
 >
 
 ### Exercicio-3
+
+>
+> A) DELETE FROM Actor WHERE name = "FERNANDA MONTENEGRO"; 
+> B) DELETE FROM Actor WHERE gender = "male" and salary > 1000000;
+>
+
 ### Exercicio-4
 ### Exercicio-6
