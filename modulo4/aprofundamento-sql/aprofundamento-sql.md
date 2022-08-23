@@ -48,3 +48,10 @@
 >
 
 ### Exercicio-6
+
+>
+> A) ALTER TABLE filmes ADD playing_limit_date DATE;
+> B)ALTER TABLE filmes CHANGE avaliacao avaliacao float;
+> C)UPDATE filmes SET playing_limit_date = "2020-12-31" WHERE id = "003"
+> D) DELETE FROM Movie WHERE id = "001"
+>
