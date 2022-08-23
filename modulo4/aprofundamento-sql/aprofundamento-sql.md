@@ -66,3 +66,12 @@
 > E) SELECT MAX(avaliacao)from filmes; 
 > F) SELECT MIN(avaliacao)from filmes; 
 >
+
+### Exercicio-8
+
+>
+> A) SELECT id,titulo FROM filmes ORDER BY titulo ;
+> B) SELECT id,titulo FROM filmes ORDER BY titulo DESC LIMIT 5;
+> C) SELECT id, titulo FROM filmes where CURDATE() > data_de_lançamento LIMIT 3;
+> D) SELECT titulo, avaliacao from filmes ORDER BY avaliacao DESC LIMIT 3;
+>
