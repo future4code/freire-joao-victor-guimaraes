@@ -29,4 +29,10 @@
 >
 
 ### Exercicio-4
+
+>
+> A) 
+> B) 
+>
+
 ### Exercicio-6
