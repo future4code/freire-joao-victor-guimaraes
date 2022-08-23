@@ -13,6 +13,14 @@
 >
 
 ### Exercicio-2
+
+>
+> A) 
+> B)
+> C)
+> D)
+>
+
 ### Exercicio-3
 ### Exercicio-4
 ### Exercicio-6
