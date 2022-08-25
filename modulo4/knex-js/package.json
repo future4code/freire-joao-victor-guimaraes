@@ -5,6 +5,7 @@
   "scripts": {
     "start": "tsc && node build/app.js",
     "exercicio1": "tsc && node build/exercicio1.js",
+    "exercicio2": "tsc && node build/exercicio2.js",
     "dev-start": "ts-node-dev src/app.ts"
   },
   "author": "Labenu",
