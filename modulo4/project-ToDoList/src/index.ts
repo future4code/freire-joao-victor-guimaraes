@@ -2,6 +2,7 @@ import express, {Express } from  "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import connection from "./connection"
+import createUser from "./endpoints/createUser";
 
 const app: Express = express();
 app.use(express.json());
@@ -9,20 +10,7 @@ app.use(cors());
 
 
 //      1. Criar usuário 
-// app.post("/createUser",async (req,res)=>{
-//     try{
-//         await connection("TodoListUser")
-//         .insert({
-//         id:Date.now()+Math.random().toString(),
-//         name: req.body.name,
-//         nickname:req.body.nickname,
-//         email:req.body.email
-//     })
-//     res.status(200).send("Sucess!")
-//     } catch(error:any){
-        
-//     }
-// })
+app.post("/createUser",createUser)
 
 //    2. Pegar usuário pelo id
 // const getUserById =async(id:string):Promise<any> =>{
