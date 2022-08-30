@@ -1,11 +1,11 @@
-// import selectAllUsers from '../../data/selectAllUsers';
+
 
 import {Request,Response } from "express"
 import { userTypes } from "../types"
 import { connection } from "../data/connection"
 
 
-export const getUsersByName = async(req: Request,res: Response): Promise<any> =>{
+export const getUserByName = async(req: Request,res: Response): Promise<any> =>{
     try {
       const name = req.query.name
        const result = await connection ("aula48_exercicio").where("name","like",`%${name}%`)

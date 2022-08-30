@@ -1,6 +1,6 @@
 
-import {getUsersByName} from "./endpoints/ex1-A";
-import { getTypeUsers} from "./endpoints/ex1-B"
+import {getUserByName} from "./endpoints/ex1-A";
+import { getTypeUser} from "./endpoints/ex1-B"
 import express from "express"
 import cors from "cors"
 import { AddressInfo } from "net"
@@ -10,8 +10,8 @@ export const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.get("/filterUserByName", getUsersByName)
-app.get("/TypeUsers/:type", getTypeUsers)
+app.get("/filterUserByName", getUserByName)
+app.get("/TypeUsers/:type", getTypeUser)
 
 
 const server = app.listen(process.env.PORT || 3003, () => {

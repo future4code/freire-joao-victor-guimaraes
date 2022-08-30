@@ -3,7 +3,7 @@ import { userTypes } from "../types"
 import { connection } from "../data/connection"
 
 
-export const getTypeUsers = async(req: Request,res: Response): Promise<any> =>{
+export const getTypeUser = async(req: Request,res: Response): Promise<any> =>{
     try {
       const type = req.params.type
        const result = await connection ("aula48_exercicio").select("name","type").where("type","like",`%${type}%`)
