@@ -1,10 +1,16 @@
-GET http://localhost:3003/endereco/05424150
+GET https://cep-adress.herokuapp.com/endereco/:cep
 
 ###
-post https://cep-labenu.herokuapp.com/user/05424150
+POST https://cep-adress.herokuapp.com/user/05424150
 
 ###
-post http://localhost:3003/user/05424150
+POST https://cep-adress.herokuapp.com/user/:cep
+Content-Type: application/json
+
+{
+    "numero":"83",
+    "complemento":"lado impar"
+}
 
 ###
-GET http://localhost:3003/list
+GET https://cep-adress.herokuapp.com/list
