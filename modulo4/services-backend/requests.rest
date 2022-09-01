@@ -4,7 +4,7 @@ GET https://cep-adress.herokuapp.com/endereco/:cep
 POST https://cep-adress.herokuapp.com/user/05424150
 
 ###
-POST https://cep-adress.herokuapp.com/user/:cep
+POST https://cep-adress.herokuapp.com/user/31030410
 Content-Type: application/json
 
 {
