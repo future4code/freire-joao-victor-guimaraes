@@ -11,7 +11,6 @@ export const getAddress = async (req: Request, res: Response) => {
     }
 
     const result = await axios.get(`https://viacep.com.br/ws/${cep}/json/`);
-    console.log(result.data);
     const adress: Address = {
       cep: result.data.cep,
       logradouro: result.data.logradouro,
