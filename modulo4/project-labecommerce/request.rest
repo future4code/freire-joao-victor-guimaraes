@@ -1,0 +1,42 @@
+POST https://labecommerce-lbn.herokuapp.com/registerUser
+Content-Type: application/json
+
+{
+    "name":"1662140646815",
+    "email":"1662150113779",
+    "password":2
+}
+
+###
+GET https://labecommerce-lbn.herokuapp.com/users
+
+###
+POST https://labecommerce-lbn.herokuapp.com/registerProduct
+
+Content-Type: application/json
+
+{
+    "name":"1662140646815",
+    "price":"1662150113779",
+    "image_url":2
+}
+
+###
+GET https://labecommerce-lbn.herokuapp.com/products
+
+###
+POST https://labecommerce-lbn.herokuapp.com/resgisterPurchase
+Content-Type: application/json
+
+{
+    "user_id":"1662140646815",
+    "product_id":"1662149929178",
+    "quantity":1
+}
+
+### 
+GET https://labecommerce-lbn.herokuapp.com/purchases
+
+###
+
+GET https://labecommerce-lbn.herokuapp.com/users/1662140646815/purchases

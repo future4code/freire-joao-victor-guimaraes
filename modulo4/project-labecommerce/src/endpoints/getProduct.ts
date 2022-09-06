@@ -1,5 +1,5 @@
 import { Response, Request } from "express";
-import selectProducts from "../data/selectProducts";
+import selectProducts from "../data/selectAllProducts";
 
 
 export default async function getProduct(req:Request, res:Response) {
