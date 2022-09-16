@@ -6,7 +6,7 @@ export class Authenticator {
     generateToken(info: AuthenticationData): string{
 
         const token = jwt.sign(
-            {id: info.id},
+            info,
             process.env.JWT_KEY as string,
             {expiresIn: process.env.JWT_EXPIRATION_TIME}
         )
@@ -15,9 +15,9 @@ export class Authenticator {
 
     getTokenData(token: string): AuthenticationData {
 
-        const payload = jwt.verify( token, process.env.JWT_KEY as string)as any
+        const payload = jwt.verify( token, process.env.JWT_KEY as string)
 
-        return payload.id as AuthenticationData
+        return payload as AuthenticationData
 
     }
 }
