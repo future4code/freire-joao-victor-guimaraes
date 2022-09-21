@@ -5,7 +5,12 @@ import { HashManager } from "../services/HashManager"
 import { IdGenerator } from "../services/IdGenerator"
 
 export class UserBusiness {
-    constructor(){}
+    constructor(
+        private userDatabase:UserDatabase,
+        private hashManager:HashManager,
+        private idGenerator:IdGenerator,
+        private authenticator:Authenticator
+    ){}
 
     public signup = async (input: singUpInputDTO) => {
         const name = input.name
@@ -32,18 +37,18 @@ export class UserBusiness {
             throw new Error("Parâmetro 'password' inválido")
         }
 
-        const userDatabase = new UserDatabase()
-        const userDB = await userDatabase.findByEmail(email)
+        // const userDatabase = new UserDatabase()
+        const userDB = await this.userDatabase.findByEmail(email)
 
         if (userDB) {
             throw new Error("E-mail já cadastrado")
         }
 
-        const idGenerator = new IdGenerator()
-        const hashManager = new HashManager()
+        // const idGenerator = new IdGenerator()
+        // const hashManager = new HashManager()
 
-        const id = idGenerator.generate()
-        const hashedPassword = await hashManager.hash(password)
+        const id = this.idGenerator.generate()
+        const hashedPassword = await this.hashManager.hash(password)
 
         const user = new User(
             id,
@@ -53,15 +58,15 @@ export class UserBusiness {
             USER_ROLES.NORMAL
         )
 
-        await userDatabase.createUser(user)
+        await this.userDatabase.createUser(user)
 
         const payload: ITokenPayload = {
             id: user.getId(),
             role: user.getRole()
         }
 
-        const authenticator = new Authenticator()
-        const token = authenticator.generateToken(payload)
+        // const authenticator = new Authenticator()
+        const token = this.authenticator.generateToken(payload)
 
         const response:responseOutPutDTO = {
             message: "Cadastro realizado com sucesso",
