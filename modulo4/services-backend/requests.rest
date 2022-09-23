@@ -1,0 +1,16 @@
+GET https://cep-address-lbn.herokuapp.com/endereco/:cep
+
+###
+POST https://cep-address-lbn.herokuapp.com/user/05424150
+
+###
+POST https://cep-adress.herokuapp.com/user/31030410
+Content-Type: application/json
+
+{
+    "numero":"83",
+    "complemento":"lado impar"
+}
+
+###
+GET https://cep-address-lbn.herokuapp.com/list
