@@ -36,9 +36,11 @@ describe("Testing validateEmptyPropertir", () => {
   });
 
   test("Exercicio 07 ", () => {
-    const myArray: number[] = [1, 5, 2, 3, 7];
+    const myArray: number[] = [7, 5, 10, 3, 7];
     const array = ArrayAvg(myArray);
-    expect(Math.ceil(array)).toBeGreaterThan(3);
+    
+    expect(Math.ceil(array)).toBeGreaterThanOrEqual(4);
+    expect(Math.ceil(array)).toBeLessThanOrEqual(8);
   });
   test("Exercicio 08 ",()=> {
     expect(descubraSuaIdade(1997)).toBe(25)
