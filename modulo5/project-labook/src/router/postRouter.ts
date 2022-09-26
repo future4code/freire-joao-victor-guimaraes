@@ -15,5 +15,6 @@ const postController = new PostController(
     )
 )
 
-// postRouter.post("/", PostController.createPost)
+postRouter.post("/create-post", postController.createPost)
+postRouter.get("/all-posts", postController.getPosts)
 // etc

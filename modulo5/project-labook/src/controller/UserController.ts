@@ -18,18 +18,18 @@ export class UserController {
     }
   };
 
-  doLogin = async(req:Request,res:Response)=>{
-   try {
-    const input:any ={
-        email:req.body.email,
-        password:req.body.password
-    }
-    const response = await this.userBusiness.login(input);
+  doLogin = async (req: Request, res: Response) => {
+    try {
+      const input: any = {
+        email: req.body.email,
+        password: req.body.password,
+      };
+      const response = await this.userBusiness.login(input);
       res.status(201).send(response);
-   } catch (error:any) {
-    res.status(400).send({ message: error.message });
-   }
-  }
+    } catch (error: any) {
+      res.status(400).send({ message: error.message });
+    }
+  };
 
-
+  
 }

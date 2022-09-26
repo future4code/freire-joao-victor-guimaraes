@@ -10,6 +10,12 @@ export interface ILikeDB {
     user_id: string
 }
 
+export interface IGetPostsOutPutDTO {
+    posts:Post[]
+    
+}
+
+
 export class Post {
     constructor(
         private id: string,
