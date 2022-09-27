@@ -1,0 +1,47 @@
+@baseUrlPOSTS = http://localhost:3003/posts
+
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+
+### SING UP
+POST http://localhost:3003/users/register-user
+Content-Type: application/json
+
+{
+    "name": "joao",
+    "email": "joao@gmail.com",
+    "password": "abc123"
+
+}
+
+
+
+
+
+### 
+# @name login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "joao@gmail.com",
+    "password": "abc123"
+}
+
+
+### CREATE POST
+POST {{baseUrlPOSTS}}/create-post
+Authorization: {{login.response.body.token}}
+Content-Type: application/json
+
+{
+    "content": "fui no pé "        
+}
+
+
+
+###
+GET http://localhost:3003/posts/all-posts
+Authorization: {{login.response.body.token}}
