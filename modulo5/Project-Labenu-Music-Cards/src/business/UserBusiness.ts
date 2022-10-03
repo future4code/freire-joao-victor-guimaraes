@@ -30,13 +30,13 @@ export class UserBusiness {
     if (!name || !email || !password) {
       throw new NotFoundError("Favor preencher todos os campos");
     }
-    if (name !== "string") {
+    if (typeof name !== "string") {
       throw new ParamsError("Parâmetro 'name' inválido");
     }
-    if (email !== "string") {
+    if (typeof email !== "string") {
       throw new ParamsError("Parâmetro 'email' inválido");
     }
-    if (password !== "string") {
+    if (typeof password !== "string") {
       throw new ParamsError("Parâmetro 'password' inválido");
     }
     if (name.length < 3) {
@@ -49,7 +49,7 @@ export class UserBusiness {
         "Parâmetro 'password' inválido: mínimo de 6 caracteres"
       );
     }
-    if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+    if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
       throw new ParamsError("Parâmetro 'email' inválido");
     }
 
@@ -80,13 +80,13 @@ export class UserBusiness {
   doLogin = async (input: IDoLoginInputDTO) => {
     const { email, password } = input;
 
-    if (email !== "string") {
+    if (typeof email !== "string") {
       throw new ParamsError("Parâmetro 'email' inválido");
     }
-    if (password !== "string") {
+    if (typeof password !== "string") {
       throw new ParamsError("Parâmetro 'password' inválido");
     }
-    if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+    if (!email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
       throw new ParamsError("Parâmetro 'email' inválido");
     }
     if (password.length < 6) {
@@ -111,7 +111,7 @@ export class UserBusiness {
       password,
       user.getPassword()
     );
-    if (passwordIsCorrect) {
+    if (!passwordIsCorrect) {
       throw new AuthenticationError("Password incorreto");
     }
     const payload: ITokenPayload = {
@@ -123,8 +123,8 @@ export class UserBusiness {
 
     const answer: IDoLoginOutputDTO = {
       message: "Logged as successfully",
-      token,
+      token
     };
-    return token;
+    return answer;
   };
 }

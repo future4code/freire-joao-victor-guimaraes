@@ -10,11 +10,18 @@ export interface ITicketDB {
     user_id: string
 }
 
+export interface ICreateShowInputDTO {
+    token:string,
+    band:string,
+    starts_at:Date
+}
+
+
 export class Show {
     constructor(
         private id: string,
         private band: string,
-        private startsAt: Date,
+        private starts_at: Date,
         private tickets: number = 5000
     ) {}
 
@@ -27,7 +34,7 @@ export class Show {
     }
 
     public getStartsAt = () => {
-        return this.startsAt
+        return this.starts_at
     }
 
     public getTickets = () => {
@@ -43,7 +50,7 @@ export class Show {
     }
 
     public setStartsAt = (newStartsAt: Date) => {
-        this.startsAt = newStartsAt
+        this.starts_at = newStartsAt
     }
 
     public setTickets = (newTickets: number) => {

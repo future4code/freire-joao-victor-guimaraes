@@ -15,4 +15,5 @@ const showController = new ShowController(
         new Authenticator()
     )
 )
-
+showRouter.post("/create-show",showController.createShow)
+showRouter.get("/select-show",showController.getShow)
