@@ -21,13 +21,13 @@ const GlobalProvider = ({ children }) => {
     const res = await axios.get('/tarot.json');
     setPath(res.data);
   };
-  const handleFlipCard = () => {
+  const handleCardFlip = () => {
     setFlip(!flip);
   };
   const imagePath = path.imagesUrl
   const backCard = path.imageBackCard
   return (
-    <CardContext.Provider value={{ card, path, imagePath, backCard, flip, handleFlipCard }}>
+    <CardContext.Provider value={{ card, path, imagePath, backCard, flip, handleCardFlip }}>
       { children }
     </CardContext.Provider>
   );

@@ -1,11 +1,12 @@
 import styled from "styled-components"
 import image from "../../assets/bg-card.jpg"
 
-export const StyleDiv = styled.div`
+export const StyledMain = styled.main`
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
 width: auto;
+background-color: whitesmoke;
 `
 
 export const ContainerCards = styled.div`
@@ -17,6 +18,7 @@ margin: 10px;
 width:195px;
 height: 400px;
 border-radius: 30px;
+box-shadow: 5px 5px 5px black
 `
 
 export const StyledImg = styled.img`
