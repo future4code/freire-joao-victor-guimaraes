@@ -1,28 +1,40 @@
 import { useContext } from "react";
-import { ContainerCards, StyledMain, StyledImg, TextStyle } from "./styled";
+import {
+  ContainerCards,
+  Container,
+  StyledImg,
+  TextStyle,
+  FaceCard,
+  BackCard,
+  FlipCard,
+} from "./styled";
 import { CardContext } from "../../context/cardContext";
 
 const Card = () => {
-  const { card, backCard, imagePath,flip } = useContext(CardContext);
+  const { card, backCard, imagePath, flip } = useContext(CardContext);
 
   return (
-    <StyledMain>
+    <Container>
       {card.map((card, index) => {
         return (
           <ContainerCards key={index}>
-            <div data-hmtl={true} data-tip={`${card.name}`} >
-              <StyledImg
-                src={`${imagePath}${card?.image}`}
-                alt={`${card?.name}`}
-              />
+            <FlipCard className={`card ${flip ? "is-flipped":""}`}>
+              <FaceCard className="cardFaceFront">
+                <img
+                  src={`${imagePath}${card?.image}`}
+                  alt={`${card?.name}`}
+                />
+                <TextStyle>{card?.name}</TextStyle>
+              </FaceCard>
 
-              <TextStyle>{card?.name}</TextStyle>
-            </div>
-            <StyledImg src={`${backCard}`} alt={`${card.name}`} />
+              <BackCard className="cardFaceBack">
+                <img src={`${backCard}`} alt={`${card.name}`} />
+              </BackCard>
+            </FlipCard>
           </ContainerCards>
         );
       })}
-    </StyledMain>
+    </Container>
   );
 };
 export default Card;
