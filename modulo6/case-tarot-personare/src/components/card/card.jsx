@@ -2,7 +2,7 @@ import { useContext } from "react";
 import {
   ContainerCards,
   Container,
-  StyledImg,
+  
   TextStyle,
   FaceCard,
   BackCard,
@@ -11,24 +11,39 @@ import {
 import { CardContext } from "../../context/cardContext";
 
 const Card = () => {
-  const { card, backCard, imagePath, flip } = useContext(CardContext);
+  const { tarotJson,card, backCard, imagePath,flip,handleCardFlip } = useContext(CardContext);
 
   return (
     <Container>
+      <header>
+      <h1>
+        {flip 
+        ? 'Clique em iniciar o jogo para virar as cartas' 
+        : 'Passe o mouse para virar uma carta'}
+      </h1>
+      {flip ? <button onClick={handleCardFlip}>Iniciar o Jogo</button> : ''}
+      </header>
+      
+        
       {card.map((card, index) => {
         return (
           <ContainerCards key={index}>
-            <FlipCard className={`card ${flip ? "is-flipped":""}`}>
+            <FlipCard data-html={true}
+              data-tip={
+                card.open
+                  ? `<p style="text-align: center; padding-bottom: .4rem;">${card.name}</p><p>lorem lorem lorem lorem</p>`
+                  : 'Clique aqui para ver a carta'
+              } className={`card ${flip ? "is-flipped":""}`}>
               <FaceCard className="cardFaceFront">
                 <img
                   src={`${imagePath}${card?.image}`}
                   alt={`${card?.name}`}
                 />
-                <TextStyle>{card?.name}</TextStyle>
+                <TextStyle>{tarotJson}</TextStyle>
               </FaceCard>
 
               <BackCard className="cardFaceBack">
-                <img src={`${backCard}`} alt={`${card.name}`} />
+                <img src={`${backCard}`} alt={`${card?.name}`} />
               </BackCard>
             </FlipCard>
           </ContainerCards>

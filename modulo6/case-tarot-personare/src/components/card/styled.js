@@ -6,7 +6,7 @@ export const Container = styled.main`
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: black;
+  background-color: #272727;
 `;
 
 
@@ -15,11 +15,12 @@ export const ContainerCards = styled.article`
   height: 400px;
   margin:5px;
   perspective: 600px;
-  .is-flipped {
-    /* transform: rotateY(180deg); */
+  .active {
+    transform: rotateY(180deg);
   }
   .cardFaceFront {
     background-image: url(${image}); 
+    background-size: auto;
     transform: rotateY( 180deg );
     flex-direction: column;
     border-radius: 13px;
@@ -61,13 +62,11 @@ export const BackCard = styled.section`
   backface-visibility: hidden;
 `;
 
-export const StyledImg = styled.img`
-  padding-top: 20px;
-  justify-content: center;
-`;
+
 export const TextStyle = styled.h4`
   margin: 0;
   text-align: center;
   font-style: italic;
   color: whitesmoke;
+  text-shadow: 4px 6px 3px black; 
 `;
