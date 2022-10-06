@@ -1,6 +1,8 @@
 
-import Card from './components/card/card.jsx';
+
+
 import GlobalProvider from './context/cardContext';
+import Router from './router/Router';
 
 
 function App() {
@@ -12,7 +14,7 @@ function App() {
 
   return (
     <GlobalProvider >
-      <Card/>
+      <Router/>
     </GlobalProvider>
   );
 }

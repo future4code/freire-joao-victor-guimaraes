@@ -16,7 +16,7 @@ export const ContainerCards = styled.article`
   margin:5px;
   perspective: 600px;
   .active {
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
   }
   .cardFaceFront {
     background-image: url(${image}); 

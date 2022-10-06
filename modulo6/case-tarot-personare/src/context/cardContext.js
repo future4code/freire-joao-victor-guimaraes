@@ -1,12 +1,6 @@
 import { useState, useEffect, createContext } from "react";
 import axios from "axios";
-// import tarotJson from "../../public/tarot.json";
-// const teste = tarotJson.cards.map((card) => {
-//   return {
-//     ...card,
-//     open: true,
-//   };
-// });
+
 export const CardContext = createContext();
 
 const GlobalProvider = ({ children }) => {
@@ -18,21 +12,31 @@ const GlobalProvider = ({ children }) => {
   useEffect(() => {
     getCard();
     getPaths();
-  });
+  },[]);
   
-  const getCard = async () => {
-    const res = await axios.get('/tarot.json');
-    setCard(res.data.cards);
-  };
+  
 
-  const shufflingCards=(arr)=>{
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+  const shuffleCards=(arr)=>{
+    const newArr = arr.slice()
+    for (let i = newArr.length - 1; i > 0; i--) {
+        const shuffling = Math.floor(Math.random() * (i + 1));
+        [newArr[i], newArr[shuffling]] = [newArr[shuffling], newArr[i]];
     }
-    return arr;
+    return newArr
   }
- 
+
+  const getCard =async () => {
+    try {
+     const res = await axios.get('/tarot.json');
+      const shufflingCards = shuffleCards(res.data.cards)
+      setCard(shufflingCards)
+    } catch (error) {
+      console.log(error)
+    }
+    
+
+    return card
+  };
 
   
 
@@ -42,12 +46,12 @@ const GlobalProvider = ({ children }) => {
   };
   const handleCardFlip = () => {
     setFlip(!flip);
-    shufflingCards(tarotJson)
+    
   };
   const imagePath = path.imagesUrl
   const backCard = path.imageBackCard
   return (
-    <CardContext.Provider value={{tarotJson, card, path, imagePath, backCard, flip, handleCardFlip }}>
+    <CardContext.Provider value={{ card, path, imagePath, backCard, flip, handleCardFlip }}>
       { children }
     </CardContext.Provider>
   );
