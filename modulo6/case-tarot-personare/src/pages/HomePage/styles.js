@@ -11,6 +11,7 @@ h1,button {
     position: relative;
     left: 30px;
     right: 100px;
+    
 }
 `
 export const StyleImg = styled.div`
