@@ -16,7 +16,7 @@ const Card = () => {
       {card.map((card, index) => {
         return (
           <ContainerCards key={index}>
-            <FlipCard className={`card ${flip ? "is-flipped" : ""}`}>
+            <FlipCard className={`card ${flip ? "is-flipped" : ""}`} >
               <FaceCard className="cardFaceFront">
                 <img src={`${imagePath}${card?.image}`} alt={`${card?.name}`} />
                 <TextStyle>{card.name}</TextStyle>

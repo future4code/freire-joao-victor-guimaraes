@@ -13,7 +13,7 @@ export const Container = styled.main`
 
 export const ContainerCards = styled.article`
   width: 100px;
-  height: 210px;
+  height: 205px;
   margin:3px;
   perspective: 600px;
   
@@ -40,11 +40,11 @@ export const ContainerCards = styled.article`
 export const FlipCard = styled.div`
   width: 100%;
   height: 100%;
-  position: relative;
-  transition: transform 0.2s;
+  position:absolute;
+  transition: transform 2s;
   transform-style: preserve-3d;
   cursor: pointer;
-  :active{
+  &:hover{
     transform: rotateY(180deg);
   }
 `;
