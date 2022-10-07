@@ -7,17 +7,16 @@ export const Container = styled.main`
   flex-wrap: wrap;
   justify-content: center;
   background-color: #272727;
+  padding: 10px;
 `;
 
 
 export const ContainerCards = styled.article`
-  width: 200px;
-  height: 400px;
-  margin:5px;
+  width: 100px;
+  height: 210px;
+  margin:3px;
   perspective: 600px;
-  .active {
-    /* transform: rotateY(180deg); */
-  }
+  
   .cardFaceFront {
     background-image: url(${image}); 
     background-size: auto;
@@ -26,8 +25,8 @@ export const ContainerCards = styled.article`
     border-radius: 13px;
     text-align: center;
     img {
-        width: 162px;
-        padding-top: 20px;
+        width:70%;
+        padding-top: 10px;
     }
   }
   .cardFaceBack{
@@ -42,9 +41,10 @@ export const FlipCard = styled.div`
   width: 100%;
   height: 100%;
   position: relative;
-  transition: transform 1s;
+  transition: transform 0.2s;
   transform-style: preserve-3d;
-  :hover{
+  cursor: pointer;
+  :active{
     transform: rotateY(180deg);
   }
 `;
@@ -53,7 +53,7 @@ export const FaceCard = styled.section`
   position: absolute;
   height: 100%;
   width: 100%;
-  /* backface-visibility:hidden; */
+  backface-visibility:hidden;
 `;
 export const BackCard = styled.section`
   position: absolute;

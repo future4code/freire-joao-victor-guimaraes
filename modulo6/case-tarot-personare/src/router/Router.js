@@ -1,6 +1,6 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import HomePage from "../pages/HomePage/HomePage"
-import ChooseCards from "../pages/CardPage/card"
+import ChooseCards from "../pages/CardPage/CardPage"
 import ErrorPage from "../pages/ErrorPage/ErroPage"
 
 

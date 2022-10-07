@@ -7,8 +7,6 @@ const GlobalProvider = ({ children }) => {
  
   const [ card, setCard ]= useState([]);
   const [path, setPath] = useState([]);
-  const [flip, setFlip] = useState(true);
-
   useEffect(() => {
     getCard();
     getPaths();
@@ -17,12 +15,11 @@ const GlobalProvider = ({ children }) => {
   
 
   const shuffleCards=(arr)=>{
-    const newArr = arr.slice()
-    for (let i = newArr.length - 1; i > 0; i--) {
+    for (let i = arr.length - 1; i > 0; i--) {
         const shuffling = Math.floor(Math.random() * (i + 1));
-        [newArr[i], newArr[shuffling]] = [newArr[shuffling], newArr[i]];
+        [arr[i], arr[shuffling]] = [arr[shuffling], arr[i]];
     }
-    return newArr
+    return arr
   }
 
   const getCard =async () => {
@@ -38,20 +35,15 @@ const GlobalProvider = ({ children }) => {
     return card
   };
 
-  
-
   const getPaths = async () => {
     const res = await axios.get('/tarot.json');
     setPath(res.data);
   };
-  const handleCardFlip = () => {
-    setFlip(!flip);
-    
-  };
+  
   const imagePath = path.imagesUrl
   const backCard = path.imageBackCard
   return (
-    <CardContext.Provider value={{ card, path, imagePath, backCard, flip, handleCardFlip }}>
+    <CardContext.Provider value={{ card, path, imagePath, backCard }}>
       { children }
     </CardContext.Provider>
   );

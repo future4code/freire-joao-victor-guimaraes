@@ -2,28 +2,23 @@ import { useContext } from "react";
 import {
   ContainerCards,
   Container,
-  
   TextStyle,
   FaceCard,
   BackCard,
   FlipCard,
-} from "./styled";
+} from "./styles";
 import { CardContext } from "../../context/cardContext";
 
 const Card = () => {
-  const { card, backCard, imagePath,flip, } = useContext(CardContext);
-
+  const { card, backCard, imagePath, flip } = useContext(CardContext);
   return (
     <Container>
       {card.map((card, index) => {
         return (
           <ContainerCards key={index}>
-            <FlipCard  className={`card ${flip ? "is-flipped":""}`}>
+            <FlipCard className={`card ${flip ? "is-flipped" : ""}`}>
               <FaceCard className="cardFaceFront">
-                <img
-                  src={`${imagePath}${card?.image}`}
-                  alt={`${card?.name}`}
-                />
+                <img src={`${imagePath}${card?.image}`} alt={`${card?.name}`} />
                 <TextStyle>{card.name}</TextStyle>
               </FaceCard>
 
