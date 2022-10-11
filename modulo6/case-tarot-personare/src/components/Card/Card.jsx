@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext,useState } from "react";
 import {
   ContainerCards,
   Container,
@@ -8,15 +8,29 @@ import {
   FlipCard,
 } from "./styles";
 import { CardContext } from "../../context/cardContext";
+import DetailPopUp from "../DetailPopUp/DetailPopUp";
+
 
 const Card = () => {
-  const { card, backCard, imagePath, flip } = useContext(CardContext);
+  const { card, backCard, imagePath } = useContext(CardContext);
+  const [AState, setDetailCard]=useState({
+    isActive:false, 
+    detailName:null,
+    detailImage:null
+   
+  })
+
+ 
+
   return (
     <Container>
       {card.map((card, index) => {
         return (
-          <ContainerCards key={index}>
-            <FlipCard className={`card ${flip ? "is-flipped" : ""}`} >
+          <ContainerCards key={card.name}>
+             {/* <DetailPopUp CardDetail={card}/> */}
+             
+            <FlipCard onClick={()=> {setDetailCard({isActive:true, detail:{state:card}})}} key={card.name} >
+            
               <FaceCard className="cardFaceFront">
                 <img src={`${imagePath}${card?.image}`} alt={`${card?.name}`} />
                 <TextStyle>{card.name}</TextStyle>
@@ -26,7 +40,10 @@ const Card = () => {
                 <img src={`${backCard}`} alt={`${card?.name}`} />
               </BackCard>
             </FlipCard>
+            {/* {AState.isActive && <DetailPopUp  key={card.name}/>} */}
+            
           </ContainerCards>
+          
         );
       })}
     </Container>

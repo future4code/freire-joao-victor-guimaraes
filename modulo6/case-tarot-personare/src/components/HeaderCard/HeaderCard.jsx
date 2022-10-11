@@ -4,7 +4,7 @@ import { Head,Button } from "./styles"
 
 
 
-const HeaderCardPage =()=>{
+const HeaderCard=()=>{
 const navigate = useNavigate()
 return(
     <Head>
@@ -14,4 +14,4 @@ return(
     </Head>
 )
 }
-export default HeaderCardPage
+export default HeaderCard

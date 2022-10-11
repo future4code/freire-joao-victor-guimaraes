@@ -15,11 +15,12 @@ const GlobalProvider = ({ children }) => {
   
 
   const shuffleCards=(arr)=>{
+    const newArr = arr.slice()
     for (let i = arr.length - 1; i > 0; i--) {
         const shuffling = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[shuffling]] = [arr[shuffling], arr[i]];
+        [newArr[i], newArr[shuffling]] = [newArr[shuffling], newArr[i]];
     }
-    return arr
+    return newArr
   }
 
   const getCard =async () => {
