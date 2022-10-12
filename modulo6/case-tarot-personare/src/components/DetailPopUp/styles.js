@@ -18,13 +18,21 @@ export const Modal = styled.div`
   width: 480px;
   min-height: 400px;
   padding: 10px;
+  align-items: center;
+  border-radius: 12px;
   img {
-    size: 20%;
+    margin: 5px;
     @media (max-width: 500px) {
       width: 120px;
       height: 70%;
     }
+    
   }
+  button{
+    margin-top: 5px;
+    margin-left: 5px;
+    border-radius: 12px;
+    }
   @media (max-width: 500px) {
     width: 60%;
     height: 50%;
