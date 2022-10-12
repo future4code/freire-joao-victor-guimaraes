@@ -1,52 +1,25 @@
 // import { useNavigate } from "react-router-dom";
 
 import { useContext } from "react";
-import { useLocation } from "react-router-dom";
-import styled from "styled-components";
+
+
 import { CardContext } from "../../context/cardContext";
+import { Modal, ModalContainer, Modalseg } from "./styles";
 const DetailPopUp = (props) => {
   const { imagePath } = useContext(CardContext);
-  const { card } = props
-  // const location = useLocation()
- 
+  const { card } = props;
+  const { name, image } = card;
 
-  const ModalContainer = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    z-index: 1000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `;
-  const Modal = styled.div`
-   position: absolute;
-    background: white;
-    width: 450px;
-    min-height: 400px;
-    padding: 10px;
-    img {
-      size: 20%;
-    }
-  `;
-
-  const Modalseg = styled.div`
-    display: flex;
-    p {
-      margin: 10px;
-    }
-  `;
+  
 
   return (
     <>
-      <ModalContainer className="modal-container" key={card.name}>
-        <Modal className="modal" key={card.name}>
-          <h2>Sua carta escolhida foi: {card.state.name}</h2>
+      <ModalContainer className="modal-container">
+        <Modal className="modal">
+          <h2>Sua carta escolhida foi: {name}</h2>
           <Modalseg>
-            <img src={`${imagePath}${card.image}`} alt={card?.name} />
+            <img src={`${imagePath}${image}`} alt={name} />
+            <div className="Scroll-text">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Voluptatum, soluta! Fugiat, voluptatem reprehenderit! Ratione,
@@ -61,10 +34,10 @@ const DetailPopUp = (props) => {
               inventore dignissimos exercitationem, debitis molestias nulla
               nesciunt eos. Vitae?
             </p>
+            </div>
           </Modalseg>
-          <button onClick={()=>window.location.reload(true)}>voltar</button>
+          <button onClick={() => window.location.reload(true)}>voltar</button>
         </Modal>
-        
       </ModalContainer>
     </>
   );

@@ -41,10 +41,10 @@ export const FlipCard = styled.div`
   width: 100%;
   height: 100%;
   position:absolute;
-  transition: transform 2s;
-  transform-style: preserve-3d;
   cursor: pointer;
-  &:hover{
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  :active{
     transform: rotateY(180deg);
   }
 `;

@@ -15,8 +15,7 @@ const Card = () => {
   const { card, backCard, imagePath } = useContext(CardContext);
   const [AState, setDetailCard]=useState({
     isActive:false, 
-    detailName:null,
-    detailImage:null
+    popUp:null
    
   })
 
@@ -24,28 +23,26 @@ const Card = () => {
 
   return (
     <Container>
-      {card.map((card, index) => {
+      {card.map((card) => {
+        const {name,image}=card
         return (
-          <ContainerCards key={card.name}>
-             {/* <DetailPopUp CardDetail={card}/> */}
+          <ContainerCards key={card.name} >
              
-            <FlipCard onClick={()=> {setDetailCard({isActive:true, detail:{state:card}})}} key={card.name} >
-            
+            <FlipCard className="Flip" onClick={()=>{setDetailCard({isActive:true, popUp:card})}} key={card.name}>  
               <FaceCard className="cardFaceFront">
-                <img src={`${imagePath}${card?.image}`} alt={`${card?.name}`} />
-                <TextStyle>{card.name}</TextStyle>
+                <img src={`${imagePath}${image}`} alt={`${name}`} />
+                <TextStyle>{name}</TextStyle>
               </FaceCard>
-
               <BackCard className="cardFaceBack">
-                <img src={`${backCard}`} alt={`${card?.name}`} />
+                <img src={`${backCard}`} alt={`${backCard}`} />
               </BackCard>
             </FlipCard>
-            {/* {AState.isActive && <DetailPopUp  key={card.name}/>} */}
-            
           </ContainerCards>
-          
         );
       })}
+
+      {AState?.isActive && <DetailPopUp card={AState.popUp} key={card?.name}/>}
+      
     </Container>
   );
 };

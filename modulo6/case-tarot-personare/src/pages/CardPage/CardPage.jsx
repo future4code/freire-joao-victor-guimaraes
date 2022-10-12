@@ -1,10 +1,10 @@
 import Card from "../../components/Card/Card";
-import HeaderCardPage from "../../components/HeaderCardPage/HeaderCardPage";
+import HeaderCard from "../../components/HeaderCard/HeaderCard";
 
 const CardPage = () => {
   return (
     <>
-      <HeaderCardPage />
+      <HeaderCard />
       <Card />
     </>
   );
