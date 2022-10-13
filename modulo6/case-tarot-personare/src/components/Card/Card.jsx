@@ -19,7 +19,13 @@ const Card = () => {
    
   })
 
- 
+ const closePopUp =()=>{
+  setDetailCard({
+    isActive:false, 
+    popUp:null
+   
+  })
+ }
 
   return (
     <Container>
@@ -41,7 +47,14 @@ const Card = () => {
         );
       })}
 
-      {AState?.isActive && <DetailPopUp card={AState.popUp} key={card?.name}/>}
+      {
+      AState?.isActive && 
+      <DetailPopUp 
+      card={AState.popUp} 
+      closePopUp={closePopUp}
+      key={card?.name}
+      />
+      }
       
     </Container>
   );

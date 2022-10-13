@@ -32,6 +32,10 @@ export const Modal = styled.div`
     margin-top: 5px;
     margin-left: 5px;
     border-radius: 12px;
+    :hover{
+      font-weight: bold;
+      opacity: 0.8s;
+    }
     }
   @media (max-width: 500px) {
     width: 60%;
@@ -46,6 +50,7 @@ export const Modalseg = styled.div`
   }
   top: 0;
   left: 0;
+ 
   @media (max-width: 500px) {
     p {
       font-size: small;

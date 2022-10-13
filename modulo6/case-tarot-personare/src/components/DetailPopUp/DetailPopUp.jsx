@@ -7,7 +7,7 @@ import { CardContext } from "../../context/cardContext";
 import { Modal, ModalContainer, Modalseg } from "./styles";
 const DetailPopUp = (props) => {
   const { imagePath } = useContext(CardContext);
-  const { card } = props;
+  const { card,closePopUp } = props;
   const { name, image } = card;
 
   
