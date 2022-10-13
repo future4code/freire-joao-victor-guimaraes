@@ -52,18 +52,22 @@ export class Order {
     
     public getOrderItems = () => {
         return this.orderItems
+        
     }
 
     public setOrderItems = (newOrderItems: IOrderItem[]) => {
         this.orderItems = newOrderItems
+        this.getTotal()
     }
 
     public addOrderItem = (newOrderItem: IOrderItem) => {
         this.orderItems.push(newOrderItem)
+        this.getTotal()
     }
 
     public removeOrderItem = (idToRemove: string) => {
-        return this.orderItems.filter(orderItem => orderItem.id !== idToRemove)
+        this.orderItems && this.orderItems.filter(orderItem => orderItem.id !== idToRemove)
+        this.getTotal()
     }
 
     public getTotal = () => {
