@@ -1,35 +1,15 @@
-import { useEffect, useState } from "react";
-import Pizzacard from "./components/PizzaCard";
-import { BASE_URL } from "./constants";
-import axios from "axios"
+import OrderSumaryScreen from "./screens/OrderSummaryScreen/OrderSumaryScreen";
+import PizzaMenu from "./screens/PizzaMenuScreen/PizzaMenuScreen";
+import { MainCointainer } from "./Styles";
 
 function App() {
-  const [pizzas, setPizzas] = useState([])
-const getPizzas =()=>{
-  const results=  axios.get(`${BASE_URL}/pizzas`)
-  .then((res)=>{
-    setPizzas(res.data.pizzas)
-  }).catch((err)=>{
-    console.log(err)
-  })
-  return results
-}
-useEffect(()=>{
-  getPizzas()
-})
-
+  
 
   return (
-    <div >
-      {pizzas.map((pizza)=>{
-        return(
- <Pizzacard pizza={pizza} key={pizza.name} />
- 
- 
-        )
-      })}
-   
-    </div>
+    <MainCointainer>
+      <PizzaMenu/>
+    <OrderSumaryScreen/>
+    </MainCointainer>
   );
 }
 
