@@ -4,8 +4,11 @@ import Pizzacard from "../../components/PizzaCard/PizzaCard";
 import { BASE_URL } from "../../constants";
 import { ContainerSection } from "./Styles";
 
-const PizzaMenuScreen = () => {
+const PizzaMenuScreen = (props) => {
+  const {addToCart} = props
+
   const [pizzas, setPizzas] = useState([]);
+
   const getPizzas = () => {
     const results = axios
       .get(`${BASE_URL}/pizzas`)
@@ -32,7 +35,11 @@ const PizzaMenuScreen = () => {
     <ContainerSection>
       <ul>
         {pizzas.map((pizza) => {
-          return <Pizzacard pizza={pizza} key={pizza.name} />;
+          return <Pizzacard 
+          key={pizza.name} 
+          pizza={pizza} 
+          addToCart={addToCart}
+          />;
         })}
       </ul>
     </ContainerSection>

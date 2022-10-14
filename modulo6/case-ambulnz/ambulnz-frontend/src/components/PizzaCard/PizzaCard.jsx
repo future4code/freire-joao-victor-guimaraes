@@ -1,7 +1,7 @@
 import {  ListCard } from "./Styles";
 
 function Pizzacard(props) {
-  const { pizza } = props;
+  const { pizza,addToCart } = props;
 
   return (
     
@@ -18,7 +18,7 @@ function Pizzacard(props) {
             return <span>{`${item} `}</span>;
           })}
         </p>
-        <button>Add Cart</button>
+        <button onClick={()=>addToCart(pizza)}>Add Cart</button>
       </ListCard>
    
   );

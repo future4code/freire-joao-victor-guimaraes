@@ -1,8 +1,16 @@
-const OrderItemCard = () => {
+import { ListCart } from "./Styles";
+
+const OrderItemCard = (props) => {
+  const {pizza,removeToCart}=props
   return (
-    <li>
-      <h3>adad</h3>
-    </li>
+    <ListCart>
+      <h3>Pizza {pizza.name} -  {pizza.price.toLocaleString("na-us", {
+            style: "currency",
+            currency: "USD",
+          })} x {pizza.quantity}</h3>
+          
+      <button onClick={()=>removeToCart(pizza)}>Remover Item</button>
+    </ListCart>
   );
 };
 export default OrderItemCard;

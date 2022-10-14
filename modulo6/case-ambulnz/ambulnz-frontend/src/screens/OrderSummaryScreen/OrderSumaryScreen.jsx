@@ -1,11 +1,27 @@
 import OrderItemCard from "../../components/OrderItemCard/OrderItemCard";
+import { SectionContainer } from "./styles";
 
-const OrderSumaryScreen = () => {
+const OrderSumaryScreen = (props) => {
+  const {cart,removeToCart,orderConfirm,total} = props
   return (
-    <section>
+    <SectionContainer>
       <h1>Resumo do pedido</h1>
-      <OrderItemCard />
-    </section>
+      
+      {cart.map((pizza)=>{
+        return<OrderItemCard 
+        key={pizza.name}
+        pizza={pizza}
+        removeToCart={removeToCart}
+        />
+      })}
+      
+      
+      <h2>Total:  {total.toLocaleString("na-us", {
+            style: "currency",
+            currency: "USD",
+          })}</h2>
+      <button onClick={orderConfirm}>Confimar pedidos</button>
+    </SectionContainer>
   );
 };
 export default OrderSumaryScreen;
