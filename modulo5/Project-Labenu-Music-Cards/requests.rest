@@ -1,0 +1,40 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Endpoint de Register User
+POST http://localhost:3003/users/register-user
+Content-Type: application/json
+
+{
+    "name":"joice",
+    "email":"joice@gmail.com",
+    "password":"1234567"
+}
+
+
+### Endpoint de Login
+# @name login
+POST http://localhost:3003/users/do-login
+Content-Type: application/json
+
+{
+    "email":"joice@gmail.com",
+    "password":"1234567"
+}
+
+
+###
+POST http://localhost:3003/shows/create-show
+Authorization: {{login.response.body.token}}
+Content-Type: application/json
+
+{
+    "band": "AC/DC",
+    "starts_at": "2022-10-05"
+}
+
+
+### 
+GET http://localhost:3003/shows/select-show
+Authorization: {{login.response.body.token}}
