@@ -57,17 +57,17 @@ export class Order {
 
     public setOrderItems = (newOrderItems: IOrderItem[]) => {
         this.orderItems = newOrderItems
-        this.getTotal()
+        
     }
 
     public addOrderItem = (newOrderItem: IOrderItem) => {
         this.orderItems.push(newOrderItem)
-        this.getTotal()
+        this.total =this.calculateTotal()
     }
 
     public removeOrderItem = (idToRemove: string) => {
-        this.orderItems && this.orderItems.filter(orderItem => orderItem.id !== idToRemove)
-        this.getTotal()
+        this.orderItems = this.orderItems.filter(orderItem => orderItem.id !== idToRemove)
+        this.total =this.calculateTotal()
     }
 
     public getTotal = () => {
