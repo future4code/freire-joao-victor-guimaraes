@@ -1,15 +1,18 @@
-import { ListCart } from "./Styles";
+import { ListCart, QtdArea } from "./Styles";
 
 const OrderItemCard = (props) => {
-  const {pizza,removeToCart}=props
+  const {pizza,removeToCart,addToCart}=props
   return (
     <ListCart>
       <h3>Pizza {pizza.name} -  {pizza.price.toLocaleString("na-us", {
             style: "currency",
             currency: "USD",
-          })} x {pizza.quantity}</h3>
-          
-      <button onClick={()=>removeToCart(pizza)}>Remover Item</button>
+          })} </h3>
+          <QtdArea>
+      <button className="button" onClick={()=>removeToCart(pizza)}>-</button>
+      <span>{pizza.quantity}</span>
+      <button className="button" onClick={()=>addToCart(pizza)}>+</button>
+      </QtdArea>
     </ListCart>
   );
 };

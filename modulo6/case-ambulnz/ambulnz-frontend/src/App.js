@@ -101,6 +101,7 @@ console.log()
       <OrderSumary
         cart={cart}
         removeToCart={removeToCart}
+        addToCart={addToCart}
         orderConfirm={orderConfirm}
         total={total}
       />
