@@ -1,12 +1,13 @@
 import { UserBusiness } from "../business/UserBusiness";
 import { BaseError } from "../errors/BaseError";
 import { Request, Response } from "express";
+import { ILoginInputDTO, IRegisterInputDTO } from "../models/User";
 export class UserController {
   constructor(private userBusiness: UserBusiness) {}
 
   register = async (req: Request, res: Response) => {
     try {
-      const input = {
+      const input:IRegisterInputDTO = {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
@@ -14,7 +15,7 @@ export class UserController {
 
       const answer = await this.userBusiness.register(input)
       res.status(201).send(answer)
-      
+
     } catch (error: unknown) {
       if (error instanceof BaseError) {
         return res.status(error.statusCode).send({ message: error.message });
@@ -25,7 +26,7 @@ export class UserController {
 
   login = async (req: Request, res: Response) => {
     try {
-      const input = {
+      const input:ILoginInputDTO = {
         email: req.body.email,
         password: req.body.password,
       };

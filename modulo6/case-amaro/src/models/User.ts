@@ -4,6 +4,17 @@ export enum USER_ROLES{
     ADMIN="ADMIN"
 }
 
+export interface IRegisterInputDTO{
+    name:string,
+    email:string,
+    password:string
+}
+
+export interface ILoginInputDTO{
+    email:string,
+    password:string
+}
+
 export class User {
     constructor(
         private id:string,
