@@ -9,10 +9,22 @@ export interface IRegisterInputDTO{
     email:string,
     password:string
 }
+export interface IOutputDTO{
+    message:string,
+    token:string
+}
 
 export interface ILoginInputDTO{
     email:string,
     password:string
+}
+
+export interface IUserDB {
+    id: string,
+    name: string,
+    email: string,
+    password: string,
+    role: USER_ROLES
 }
 
 export class User {

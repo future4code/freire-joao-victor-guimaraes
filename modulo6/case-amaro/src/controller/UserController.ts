@@ -10,17 +10,17 @@ export class UserController {
       const input:IRegisterInputDTO = {
         name: req.body.name,
         email: req.body.email,
-        password: req.body.password,
+        password: req.body.password
       };
-
+     
       const answer = await this.userBusiness.register(input)
       res.status(201).send(answer)
 
-    } catch (error: unknown) {
+    } catch (error: any) {
       if (error instanceof BaseError) {
         return res.status(error.statusCode).send({ message: error.message });
       }
-      res.status(500).send({ message: "Erro inesperado ao cadastrar usuário" });
+      res.status(500).send({ message:error.message });
     }
   };
 
@@ -34,11 +34,33 @@ export class UserController {
       const answer = await this.userBusiness.login(input);
       res.status(200).send(answer)
 
-    } catch (error: unknown) {
+    } catch (error: any) {
       if (error instanceof BaseError) {
         return res.status(error.statusCode).send({ message: error.message });
       }
       res.status(500).send({ message: "Erro inesperado ao logar usuário" });
     }
   };
+
+  // populate = async (req: Request, res: Response) => {
+  //   try {
+      
+  //     const input = {
+  //       id:req.body.id,
+  //       name:req.body.name,
+  //       tags:req.body.tags
+  //     }
+
+  //     // const answer = await this.userBusiness.
+
+
+  //   } catch (error: any) {
+  //     if (error instanceof BaseError) {
+  //       return res.status(error.statusCode).send({ message: error.message });
+  //     }
+  //     res.status(500).send({ message:error.message });
+  //   }
+  // };
 }
+
+

@@ -1,6 +1,0 @@
-.env
-.DS_STORE
-node_modules
-build
-package-lock.json
-coverage

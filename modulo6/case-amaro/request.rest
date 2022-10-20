@@ -1,2 +1,45 @@
 ### Endpoint de teste
 GET http://localhost:3003/ping
+
+
+
+### Endpoins criar usuario 
+POST http://localhost:3003/users/register
+Content-Type: application/json
+
+{
+    "name": "Astrodev",
+    "email": "astrodev@dev.com",
+    "password": "batatinha"
+}
+
+
+### Endpoins criar usuario 
+
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "murilo@dev.com",
+    "password": "batatinha"
+}
+
+
+### 
+
+POST http://localhost:3003/users/populate
+Content-Type: application/json
+
+[
+    
+ {
+      "id": "8371",
+      "name": "VESTIDO TRICOT CHEVRON",
+      "tags": ["balada", "neutro", "delicado", "festa"]
+    },
+    {
+      "id": 8367,
+      "name": "VESTIDO MOLETOM COM CAPUZ MESCLA",
+      "tags": ["casual", "metal", "metal"]
+    }
+]
