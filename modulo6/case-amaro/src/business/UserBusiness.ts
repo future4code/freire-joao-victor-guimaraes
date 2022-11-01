@@ -5,6 +5,7 @@ import { ParamsError } from "../errors/ParamsError";
 import {
   ILoginInputDTO,
   IOutputDTO,
+  IPopulateDTO,
   IRegisterInputDTO,
   User,
   USER_ROLES,
@@ -12,6 +13,7 @@ import {
 import { Authenticator, ITokenPayload } from "../services/Autheticator";
 import { HashManager } from "../services/HashManage";
 import { IdGenerator } from "../services/IdGenerator";
+import * as path from "path"
 
 export class UserBusiness {
   constructor(
@@ -128,10 +130,8 @@ export class UserBusiness {
 
 
 
-  // populate = async (input: any) => {
-  //   const { id, name, tags } = input;
-
-
-
-  // };
+  populate = async (input:any) => {
+    const {id, name, tags} = input
+   
+  };
 }

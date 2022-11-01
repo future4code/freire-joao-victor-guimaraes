@@ -38,7 +38,7 @@ Content-Type: application/json
       "tags": ["balada", "neutro", "delicado", "festa"]
     },
     {
-      "id": 8367,
+      "id": "8367",
       "name": "VESTIDO MOLETOM COM CAPUZ MESCLA",
       "tags": ["casual", "metal", "metal"]
     }

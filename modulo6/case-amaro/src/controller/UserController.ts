@@ -1,7 +1,8 @@
 import { UserBusiness } from "../business/UserBusiness";
 import { BaseError } from "../errors/BaseError";
 import { Request, Response } from "express";
-import { ILoginInputDTO, IRegisterInputDTO } from "../models/User";
+import { ILoginInputDTO, IPopulateDTO, IRegisterInputDTO } from "../models/User";
+import * as path from "path"
 export class UserController {
   constructor(private userBusiness: UserBusiness) {}
 
@@ -42,25 +43,43 @@ export class UserController {
     }
   };
 
-  // populate = async (req: Request, res: Response) => {
-  //   try {
+  populate = async (req: Request, res: Response) => {
+    try {
       
-  //     const input = {
-  //       id:req.body.id,
-  //       name:req.body.name,
-  //       tags:req.body.tags
-  //     }
+      const input:any = {
+        id:req.body.id,
+        name:req.body.name,
+        tags:req.body.tags
+}
 
-  //     // const answer = await this.userBusiness.
+const fs = require("fs")
+function readFileJson(file:any){
+  try {
+    let content = fs.readFileJson(file,"utf-8")
+    return JSON.parse(content)
+  } catch (error) {
+    console.log(error)
+  }
+}
+const lendoJson = readFileJson(path.resolve(__dirname,"../../products.json"))
+  console.log("o que esse faz?",lendoJson.products.map((result:any)=>{
+    return{id:result.id,name:result.name}
+  }))
 
 
-  //   } catch (error: any) {
-  //     if (error instanceof BaseError) {
-  //       return res.status(error.statusCode).send({ message: error.message });
-  //     }
-  //     res.status(500).send({ message:error.message });
-  //   }
-  // };
+
+
+      console.log("aqui", input)
+      const answer = await this.userBusiness.populate(input)
+      
+
+    } catch (error: any) {
+      if (error instanceof BaseError) {
+        return res.status(error.statusCode).send({ message: error.message });
+      }
+      res.status(500).send({ message:error.message });
+    }
+  };
 }
 
 

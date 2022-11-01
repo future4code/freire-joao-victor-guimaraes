@@ -21,5 +21,5 @@ const userController = new UserController(
 userRouter.post("/register", userController.register)
 userRouter.post("/login", userController.login)
 
-// userRouter.post("/populate", userController.populate)
+userRouter.post("/populate", userController.populate)
 

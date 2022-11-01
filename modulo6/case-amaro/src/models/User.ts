@@ -19,6 +19,17 @@ export interface ILoginInputDTO{
     password:string
 }
 
+export interface IPopulateDTO{
+    id:string,
+    name:string
+    tags:Tag[]
+
+}
+
+interface Tag{
+    tags:string
+}
+
 export interface IUserDB {
     id: string,
     name: string,
