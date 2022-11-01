@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import PopupSucessOrder from "./components/PopupSucessOrder/PopupSucessOrder";
-import { BASE_URL } from "./constants";
+import { BASE_URL } from "./constants/constants";
 import OrderSumary from "./screens/OrderSummaryScreen/OrderSumaryScreen";
 import PizzaMenu from "./screens/PizzaMenuScreen/PizzaMenuScreen";
 import { MainCointainer } from "./Styles";

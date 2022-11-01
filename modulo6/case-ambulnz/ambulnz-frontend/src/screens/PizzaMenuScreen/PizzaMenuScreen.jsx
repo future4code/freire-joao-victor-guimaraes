@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Pizzacard from "../../components/PizzaCard/PizzaCard";
-import { BASE_URL } from "../../constants";
+import { BASE_URL } from "../../constants/constants"
 import { ContainerSection } from "./Styles";
 
 const PizzaMenuScreen = (props) => {

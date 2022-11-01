@@ -4,7 +4,7 @@ function Pizzacard(props) {
   const { pizza, addToCart } = props;
 
   return (
-    <div>
+    
       <ListCard>
         <ImgPizza className="card-image" Img={pizza.name} alt="" />
 
@@ -22,7 +22,7 @@ function Pizzacard(props) {
         </p>
         <Button onClick={() => addToCart(pizza)}>Add Cart</Button>
       </ListCard>
-    </div>
+    
   );
 }
 export default Pizzacard;

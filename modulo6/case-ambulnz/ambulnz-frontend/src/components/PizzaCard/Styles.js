@@ -9,6 +9,7 @@ import pizzaDiavola from "../../assets/pizza-diavola.jpg"
 
 
 export const ListCard = styled.li`
+flex-wrap:wrap;
 font-family: Lato;
 box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.55);
 background: #ffffff;

@@ -5,6 +5,7 @@ export const SectionContainer = styled.section`
   font-family: Lato;
   border-left: 2px solid lightgray;
   text-align: center;
+  color:#f5f3ef;
   
   h1 {
    margin: 20px 0 20px 0;
